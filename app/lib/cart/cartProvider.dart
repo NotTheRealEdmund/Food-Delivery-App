@@ -1,4 +1,4 @@
-import 'package:app/food/food.dart';
+import 'package:app/food.dart';
 
 class CartProvider {
   
