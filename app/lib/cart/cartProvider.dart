@@ -2,7 +2,23 @@ import 'package:app/food/food.dart';
 
 class CartProvider {
   
-  List<Food> foodItems = [];
+  // Default for now
+  List<Food> foodItems = [
+    Food(
+      id: 1,
+      name: "Orange",
+      shopName: "ABC",
+      price: 2.24,
+      imgUrl: "orange.jpeg",
+    ),
+    Food(
+      id: 2,
+      name: "Apple",
+      shopName: "XYZ",
+      price: 1.69,
+      imgUrl: "apple.jpeg",
+    ),
+  ];
 
   List<Food> addToList(Food food) {
     bool isPresent = false;
