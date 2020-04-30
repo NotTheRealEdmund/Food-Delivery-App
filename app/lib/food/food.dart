@@ -14,7 +14,6 @@ class Food {
     @required this.shopName,
     @required this.price,
     @required this.imgUrl,
-    @required this.quantity,
     this.quantity = 1,
   });
 
