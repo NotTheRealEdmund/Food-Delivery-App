@@ -34,6 +34,9 @@ class Home extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   CustomAppBar(),
+                  SizedBox(height: 30),
+                  title(),
+                  SizedBox(height: 30),
                 ],
               ),
             )
@@ -66,4 +69,24 @@ class CustomAppBar extends StatelessWidget {
           ],
         ));
   }
+}
+
+Widget title() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: <Widget>[
+      SizedBox(width: 45),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            "Order delicious", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)
+          ),
+          Text(
+            "food online!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)
+          ),
+        ],
+      )
+    ],
+  );
 }
