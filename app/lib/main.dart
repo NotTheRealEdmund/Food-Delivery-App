@@ -37,6 +37,7 @@ class Home extends StatelessWidget {
                   SizedBox(height: 30),
                   title(),
                   SizedBox(height: 30),
+                  searchBar(),
                 ],
               ),
             )
@@ -86,6 +87,30 @@ Widget title() {
             "food online!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)
           ),
         ],
+      )
+    ],
+  );
+}
+
+Widget searchBar() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: <Widget>[
+      Icon(
+        Icons.search,
+        color: Colors.black45,
+      ),
+      SizedBox(width: 20),
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: "Search for your favourite food!",
+            contentPadding: EdgeInsets.symmetric(vertical: 10),
+            hintStyle: TextStyle(
+              color: Colors.black87
+            ),
+          ),
+        ),
       )
     ],
   );
