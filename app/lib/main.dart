@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './food.dart';
-import './food_card.dart';
 import './custom_app_bar.dart';
 import './home_title.dart';
 import './search_bar.dart';
+import './show_items.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,6 +34,8 @@ class Home extends StatelessWidget {
                   HomeTitle(),
                   SizedBox(height: 20),
                   SearchBar(),
+                  SizedBox(height: 40),
+                  ShowItems(),
                   SizedBox(height: 40),
                 ],
               ),
