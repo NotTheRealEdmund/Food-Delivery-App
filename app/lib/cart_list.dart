@@ -4,7 +4,7 @@ class CartList {
   
   List<Food> foodItems = [];
 
-  List<Food> addToList(Food food) {
+  void addToList(Food food) {
     bool isPresent = false;
     if (foodItems.length > 0) {
       for (int i=0; i<foodItems.length; i++) {
@@ -22,16 +22,14 @@ class CartList {
     } else {
       foodItems.add(food);
     }
-    return foodItems;
   }
 
-  List<Food> removeFromList(Food food) {
+  void removeFromList(Food food) {
     if (food.quantity > 1) {
       decreaseItemQuantity(food);
     } else {
       foodItems.remove(food);
     }
-    return foodItems;
   }
 
   List<Food> getList() {
