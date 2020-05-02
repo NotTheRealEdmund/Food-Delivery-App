@@ -34,7 +34,7 @@ class FoodCard extends StatelessWidget {
           SizedBox(height: 10),
           RichText(
             text: TextSpan(
-              text: food.name + ' by ' + food.shopName + '\n' + 'at only ' + '\$' + food.price.toString() + '\t',
+              text: food.name + ' by ' + food.shopName + '\n' + 'at only ' + '\$' + food.price.toStringAsFixed(2) + '\t',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black), 
             ),
           ),
