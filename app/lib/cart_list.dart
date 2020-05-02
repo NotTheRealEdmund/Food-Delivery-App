@@ -1,6 +1,6 @@
 import 'package:app/food.dart';
 
-class CartProvider {
+class CartList {
   
   List<Food> foodItems = [];
 
