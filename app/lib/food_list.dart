@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-
 import './food.dart';
-import './food_card.dart';
 
-class ShowItems extends StatelessWidget {
-  final List<Food> allFoodItems = [
+class FoodList {
+
+  List<Food> allFoodItems = [
     Food(
       id: 1,
       name: "Burger",
@@ -49,24 +47,8 @@ class ShowItems extends StatelessWidget {
     ),
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 35, 0),
-      child: SingleChildScrollView(
-        child: ListView.builder(
-            shrinkWrap: true,
-            primary: false,
-            itemCount: allFoodItems.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: FoodCard(
-                  allFoodItems[index],
-                ),
-              );
-            }),
-      ),
-    );
+  List<Food> showItems() {
+    return allFoodItems;
   }
+
 }
