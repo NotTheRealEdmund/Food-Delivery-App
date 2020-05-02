@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './food.dart';
+import './cart_list.dart';
 
 class FoodCard extends StatelessWidget {
 
@@ -16,7 +17,9 @@ class FoodCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                CartList().addToList(food);
+              },
               child: Container(
                 width: double.infinity,
                 height: 200,

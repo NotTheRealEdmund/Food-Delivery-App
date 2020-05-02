@@ -34,6 +34,10 @@ class CartList {
     return foodItems;
   }
 
+  List<Food> getList() {
+    return foodItems;
+  }
+
   void increaseItemQuantity(Food food) => food.increaseQuantity();
   void decreaseItemQuantity(Food food) => food.decreaseQuantity();
 }
