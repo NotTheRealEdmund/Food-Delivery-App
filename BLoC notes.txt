@@ -1,0 +1,15 @@
+A BLoC stands as a middleman between a source of data in your app (e.g an API response) and widgets that need the data. 
+It receives streams of events/data from the source, handles any required business logic and publishes streams of data changes 
+to widgets that are interested in them.
+
+A BLoC has two simple components: Sinks and Streams, both of which are provided by a StreamController. 
+You add streams of event/data input into a Sink and listen to them as streams of data output through a Stream.
+
+UI layer <--> BLoC layer <--> Data layer
+UI passes events to BLoC, BLoC changes state of UI layer
+BLoC sends Async Request to Data layer, Data layer sends Async Response to BLoC
+
+Inside BLoC layer:
+--> Sink --> Business Logic --> StreamController --> Stream -->
+
+
