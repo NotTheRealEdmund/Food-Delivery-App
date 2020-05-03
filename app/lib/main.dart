@@ -50,9 +50,12 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: ListView(
           children: <Widget>[
-            CustomAppBar(count),
-            SizedBox(height: 20),
-            HomeTitle(),
+            Row (
+              children: <Widget>[
+                HomeTitle(),
+                CustomAppBar(count),
+              ],
+            ),
             SizedBox(height: 20),
             SearchBar(),
             SizedBox(height: 40),
