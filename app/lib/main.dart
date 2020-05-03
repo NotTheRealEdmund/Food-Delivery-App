@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import './cart_list.dart';
 import './food_list.dart';
-import './custom_app_bar.dart';
 import './home_title.dart';
+import './count_icon.dart';
 import './search_bar.dart';
 
 void main() => runApp(MyApp());
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
             Row (
               children: <Widget>[
                 HomeTitle(),
-                CustomAppBar(count),
+                CountIcon(count),
               ],
             ),
             SizedBox(height: 20),

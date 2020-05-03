@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CountIcon extends StatelessWidget {
   String count;
-  CustomAppBar(this.count);
+  CountIcon(this.count);
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(35, 45, 0, 0),
+      padding: EdgeInsets.fromLTRB(40, 45, 0, 0),
       child: GestureDetector(
         onTap: () {},
         child: Container(
