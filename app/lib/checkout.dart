@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './cart_list.dart';
+import './back_arrow.dart';
 
 class Checkout extends StatelessWidget {
   CartList cartList;
@@ -8,12 +9,16 @@ class Checkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Return'),
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 30),
+            BackArrow(),
+            SizedBox(height: 30),
+            Text("Your orders", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+            SizedBox(height: 30),
+            
+          ],
         ),
       ),
     );
