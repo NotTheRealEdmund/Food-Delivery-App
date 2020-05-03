@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
   // List of all the food items for sale
   FoodList foodList = FoodList();
 
-  // Total number of user's selected items shown in custom app bar
+  // Total number of user's selected items shown in count icon
   String count = '0';
 
   int getTotalItems() {
