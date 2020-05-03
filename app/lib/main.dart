@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
             Row (
               children: <Widget>[
                 HomeTitle(),
-                CountIcon(count),
+                CountIcon(count, cartList),
               ],
             ),
             SizedBox(height: 20),

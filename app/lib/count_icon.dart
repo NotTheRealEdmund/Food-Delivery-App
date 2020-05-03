@@ -1,10 +1,12 @@
+import 'package:app/cart_list.dart';
 import 'package:flutter/material.dart';
 
 import './checkout.dart';
 
 class CountIcon extends StatelessWidget {
   String count;
-  CountIcon(this.count);
+  CartList cartList;
+  CountIcon(this.count, this.cartList);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +14,7 @@ class CountIcon extends StatelessWidget {
       child: GestureDetector(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Checkout()));
+                context, MaterialPageRoute(builder: (context) => Checkout(cartList)));
           },
           child: Container(
             margin: EdgeInsets.only(right: 30),
