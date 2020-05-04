@@ -30,11 +30,14 @@ class Checkout extends StatelessWidget {
                       children: <Widget>[
                         Align(
                           alignment: Alignment.centerLeft,
-                          child: Image.asset(
-                            cartList.getList()[index].imgUrl,
-                            height: 120,
-                            width: 120,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              cartList.getList()[index].imgUrl,
+                              height: 120,
+                              width: 120,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Align(
