@@ -12,11 +12,12 @@ class Checkout extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 30),
             BackArrow(),
+            Align(
+              alignment: Alignment.center,
+              child: Text("Your orders", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+            ),
             SizedBox(height: 30),
-            Text("Your orders", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
-            SizedBox(height: 45),
 
             SingleChildScrollView(
               child: ListView.builder(

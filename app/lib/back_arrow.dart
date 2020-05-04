@@ -6,7 +6,7 @@ class BackArrow extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+        padding: const EdgeInsets.fromLTRB(25, 30, 0, 10),
         child: BackButton(
           onPressed: () {
             Navigator.pop(context);
