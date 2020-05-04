@@ -1,7 +1,7 @@
-import 'package:app/cart_list.dart';
 import 'package:flutter/material.dart';
 
-import './checkout.dart';
+import 'package:app/cart_list.dart';
+import 'package:app/Checkout/checkout.dart';
 
 class CountIcon extends StatelessWidget {
   String count;

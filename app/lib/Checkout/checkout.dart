@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './cart_list.dart';
+import 'package:app/cart_list.dart';
 import './back_arrow.dart';
+import './checkout_title.dart';
 
 class Checkout extends StatelessWidget {
   CartList cartList;
@@ -13,12 +14,7 @@ class Checkout extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             BackArrow(),
-            Align(
-              alignment: Alignment.center,
-              child: Text("Your orders", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
-            ),
-            SizedBox(height: 30),
-
+            CheckoutTitle(),
             SingleChildScrollView(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -65,6 +61,22 @@ class Checkout extends StatelessWidget {
                 }
               ),
             ),
+
+            SizedBox(height: 45),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
+                  child: Text("Total: ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0)),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 40, 0),
+                  child: Text("\$" + "XX.00", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0)),
+                ),
+              ],
+            ),
+            SizedBox(height: 45),
 
           ],
         ),

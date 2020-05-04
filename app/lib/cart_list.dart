@@ -1,4 +1,4 @@
-import 'package:app/food.dart';
+import './Food/food.dart';
 
 class CartList {
   
