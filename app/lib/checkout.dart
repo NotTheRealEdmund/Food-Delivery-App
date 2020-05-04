@@ -34,13 +34,18 @@ class Checkout extends StatelessWidget {
                           width: 120,
                           fit: BoxFit.cover,
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 25),
                         Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(width: 30),
+                        SizedBox(width: 25),
                         Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
-                        SizedBox(width: 30),
-                        // Add a delete button on the very right
+                        SizedBox(width: 25),
+                        RaisedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Remove",
+                          ),
+                        ),
                       ],
                     ),
                   );
