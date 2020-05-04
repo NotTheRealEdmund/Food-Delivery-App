@@ -58,18 +58,6 @@ class Checkout extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(width: 25),
-                        Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(width: 25),
-                        Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
-                        SizedBox(width: 25),
-                        RaisedButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Remove",
-                          ),
-                        ),
                       ],
                     ),
                   );
