@@ -7,6 +7,15 @@ import './checkout_title.dart';
 class Checkout extends StatelessWidget {
   CartList cartList;
   Checkout(this.cartList);
+
+  double getTotalAmount() {
+    double num = 0;
+    for (var item in cartList.getList()) {
+      num += item.quantity * item.price;
+    }
+    return num;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +81,7 @@ class Checkout extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 40, 0),
-                  child: Text("\$" + "XX.00", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0)),
+                  child: Text("\$" + getTotalAmount().toStringAsFixed(2), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0)),
                 ),
               ],
             ),
