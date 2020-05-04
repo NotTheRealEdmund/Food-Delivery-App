@@ -27,13 +27,19 @@ class Checkout extends StatelessWidget {
                   return Card(
                     child: Row(
                       children: <Widget>[
-                        // Add image on the very left
-                        SizedBox(width: 60),
+                        SizedBox(width: 10),
+                        Image.asset(
+                          cartList.getList()[index].imgUrl,
+                          height: 120,
+                          width: 120,
+                          fit: BoxFit.cover,
+                        ),
+                        SizedBox(width: 30),
                         Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(width: 60),
+                        SizedBox(width: 30),
                         Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
-                        SizedBox(width: 60),
+                        SizedBox(width: 30),
                         // Add a delete button on the very right
                       ],
                     ),
