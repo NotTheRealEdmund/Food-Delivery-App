@@ -26,21 +26,35 @@ class Checkout extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Card(
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        SizedBox(width: 10),
-                        Image.asset(
-                          cartList.getList()[index].imgUrl,
-                          height: 120,
-                          width: 120,
-                          fit: BoxFit.cover,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset(
+                            cartList.getList()[index].imgUrl,
+                            height: 120,
+                            width: 120,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        SizedBox(width: 30),
-                        Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(width: 30),
-                        Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
-                        SizedBox(width: 30),
-                        // Add a delete button on the very right
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
+                                  style: TextStyle(fontWeight: FontWeight.bold)),
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Remove",
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   );
