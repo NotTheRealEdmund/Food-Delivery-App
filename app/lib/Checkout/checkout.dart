@@ -60,7 +60,10 @@ class Checkout extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerRight,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              cartList.removeFromList(cartList.getList()[index]);
+                              Navigator.pop(context, cartList);
+                            },
                             child: Text(
                               "Remove",
                             ),

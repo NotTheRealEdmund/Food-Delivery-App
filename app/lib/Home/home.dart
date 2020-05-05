@@ -21,18 +21,6 @@ class _HomeState extends State<Home> {
   // List of all the food items for sale
   FoodList foodList = FoodList();
 
-  // Total number of user's selected items shown in count icon
-  String count = '0';
-
-  // Calculate total number of items in cart list
-  int getTotalItems() {
-    int num = 0;
-    for (var item in cartList.getList()) {
-      num += item.quantity;
-    }
-    return num;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +30,7 @@ class _HomeState extends State<Home> {
             Row (
               children: <Widget>[
                 HomeTitle(),
-                CountIcon(count, cartList),
+                CountIcon(cartList),
               ],
             ),
             SizedBox(height: 20),
@@ -70,9 +58,7 @@ class _HomeState extends State<Home> {
                                 child: GestureDetector(
                                   onTap: () {
                                     cartList.addToList(foodList.showItems()[index]);
-                                    setState(() {
-                                      this.count = getTotalItems().toString();
-                                    });
+                                    // Show toast "Item has been added to cart!"
                                   },
                                   child: Container(
                                     width: double.infinity,
