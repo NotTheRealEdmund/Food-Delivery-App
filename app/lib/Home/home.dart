@@ -4,8 +4,7 @@ import 'package:app/cart_list.dart';
 import 'package:app/Food/food_list.dart';
 import './home_title.dart';
 import './cart_icon.dart';
-import './search_bar.dart';
-import './food_card.dart';
+import './show_items.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,25 +34,30 @@ class _HomeState extends State<Home> {
               ],
             ),
             SizedBox(height: 20),
-            SearchBar(),
-            SizedBox(height: 40),
-            // Show all the food items for sale
+            // Search Bar
             Padding(
-              padding: const EdgeInsets.fromLTRB(35, 0, 35, 0),
-              child: SingleChildScrollView(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    primary: false,
-                    itemCount: foodList.showItems().length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                        child: FoodCard(foodList.showItems()[index], cartList),
-                      );
-                    }),
+              padding: const EdgeInsets.fromLTRB(35, 0, 50, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Icon(
+                    Icons.search,
+                    color: Colors.black45,
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Search for your favourite food!",
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        hintStyle: TextStyle(color: Colors.black87),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 40),
+            ShowItems(cartList, foodList),
           ],
         ),
       ),
