@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bot_toast/bot_toast.dart';
 
 import 'package:app/cart_list.dart';
 import 'package:app/Food/food_list.dart';
@@ -58,7 +59,7 @@ class _HomeState extends State<Home> {
                                 child: GestureDetector(
                                   onTap: () {
                                     cartList.addToList(foodList.showItems()[index]);
-                                    // Show toast "Item has been added to cart!"
+                                    BotToast.showText(text:"One " + foodList.showItems()[index].name + " has been added to cart!");
                                   },
                                   child: Container(
                                     width: double.infinity,

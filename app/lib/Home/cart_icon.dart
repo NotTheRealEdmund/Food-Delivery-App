@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bot_toast/bot_toast.dart';
 
 import 'package:app/cart_list.dart';
 import 'package:app/Checkout/checkout.dart';
@@ -13,7 +14,7 @@ class CartIcon extends StatelessWidget {
       context, MaterialPageRoute(builder: (context) => Checkout(cartList)),
     );
     if (result != null) {
-      // Show toast "Item has been removed from cart!"
+      BotToast.showText(text:"One " + result + " has been removed from cart!");
     }
   }
 

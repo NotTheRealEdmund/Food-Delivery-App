@@ -61,8 +61,9 @@ class Checkout extends StatelessWidget {
                           alignment: Alignment.centerRight,
                           child: RaisedButton(
                             onPressed: () {
+                              String name = cartList.getList()[index].name;
                               cartList.removeFromList(cartList.getList()[index]);
-                              Navigator.pop(context, cartList);
+                              Navigator.pop(context, name);
                             },
                             child: Text(
                               "Remove",
