@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
   // Total number of user's selected items shown in count icon
   String count = '0';
 
+  // Calculate total number of items in cart list
   int getTotalItems() {
     int num = 0;
     for (var item in cartList.getList()) {
