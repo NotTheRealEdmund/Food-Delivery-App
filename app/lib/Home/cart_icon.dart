@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:app/cart_list.dart';
 import 'package:app/Checkout/checkout.dart';
 
-class CountIcon extends StatelessWidget {
+class CartIcon extends StatelessWidget {
   CartList cartList;
-  CountIcon(this.cartList);
+  CartIcon(this.cartList);
 
   // A method that launches checkout.dart and awaits the result from Navigator.pop from checkout.dart
   goToCheckoutPage(BuildContext context) async {

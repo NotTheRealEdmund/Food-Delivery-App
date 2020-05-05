@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:app/cart_list.dart';
 import 'package:app/Food/food_list.dart';
 import './home_title.dart';
-import './count_icon.dart';
+import './cart_icon.dart';
 import './search_bar.dart';
 
 class Home extends StatefulWidget {
@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
             Row (
               children: <Widget>[
                 HomeTitle(),
-                CountIcon(cartList),
+                CartIcon(cartList),
               ],
             ),
             SizedBox(height: 20),
