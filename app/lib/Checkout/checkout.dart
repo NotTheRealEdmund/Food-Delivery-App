@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nice_button/NiceButton.dart';
 
 import 'package:app/cart_list.dart';
 import './back_arrow.dart';
 import './checkout_title.dart';
-import 'package:nice_button/NiceButton.dart';
+import './food_card.dart';
 
 class Checkout extends StatelessWidget {
   CartList cartList;
@@ -32,47 +33,7 @@ class Checkout extends StatelessWidget {
                 primary: false,
                 itemCount: cartList.getList().length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              cartList.getList()[index].imgUrl,
-                              height: 120,
-                              width: 120,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(cartList.getList()[index].quantity.toString() + " x " + cartList.getList()[index].name,
-                                  style: TextStyle(fontWeight: FontWeight.bold)),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text("\$" + (cartList.getList()[index].quantity * cartList.getList()[index].price).toStringAsFixed(2)),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: RaisedButton(
-                            onPressed: () {
-                              String name = cartList.getList()[index].name;
-                              cartList.removeFromList(cartList.getList()[index]);
-                              Navigator.pop(context, name);
-                            },
-                            child: Text(
-                              "Remove",
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                  return FoodCard(cartList.getList()[index], cartList);
                 }
               ),
             ),
