@@ -15,7 +15,7 @@ class ShowItems extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+        padding: EdgeInsets.all(30),
         child: SingleChildScrollView(
           child: ListView.builder(
               shrinkWrap: true,
