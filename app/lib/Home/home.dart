@@ -21,22 +21,26 @@ class _HomeState extends State<Home> {
   // List of all the food items for sale
   FoodList foodList = FoodList();
 
+  // String which contains the input from search bar
+  String result = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: ListView(
           children: <Widget>[
+            Text(result),
             Row (
               children: <Widget>[
                 HomeTitle(),
                 CartIcon(cartList),
               ],
             ),
-            SizedBox(height: 20),
+
             // Search Bar
             Padding(
-              padding: const EdgeInsets.fromLTRB(35, 0, 50, 0),
+              padding: const EdgeInsets.fromLTRB(35, 20, 50, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -52,11 +56,17 @@ class _HomeState extends State<Home> {
                         contentPadding: EdgeInsets.symmetric(vertical: 10),
                         hintStyle: TextStyle(color: Colors.black87),
                       ),
+                      onSubmitted: (String str) {
+                        setState(() {
+                          result = str;
+                        });
+                      }
                     ),
                   ),
                 ],
               ),
             ),
+
             ShowItems(cartList, foodList),
           ],
         ),
