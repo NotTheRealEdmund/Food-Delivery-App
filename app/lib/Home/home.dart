@@ -30,7 +30,6 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: ListView(
           children: <Widget>[
-            Text(result),
             Row (
               children: <Widget>[
                 HomeTitle(),
@@ -67,7 +66,7 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            ShowItems(cartList, foodList),
+            ShowItems(cartList, foodList, result),
           ],
         ),
       ),
